@@ -1,3 +1,9 @@
+import environ
+environ.Env()
+environ.Env.read_env()
+
+import os
+
 """
 Django settings for gitflo_demo project.
 
@@ -77,6 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gitflo_demo',
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
     }
 }
 
